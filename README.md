@@ -108,3 +108,7 @@ open coverage/index.html
 [very_good_cli_link]: https://pub.dev/packages/very_good_cli
 [very_good_coverage_link]: https://github.com/marketplace/actions/very-good-coverage
 [very_good_workflows_link]: https://github.com/VeryGoodOpenSource/very_good_workflows
+
+## :sunglasses:  Author(s)
+
+**Junior Medehou** [![Twitter Follow](https://img.shields.io/twitter/follow/juniormedehou_?label=Follow&style=social)](https://twitter.com/juniormedehou_)
