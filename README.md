@@ -28,6 +28,8 @@ This package allows you to use [Moneroo](https://moneroo.io) to process payment 
 
 Add this line in your `AndroidManifest.xml`. This will help you to avoid an ERR_CLEAR_TEXT_NOT_PERMITTED error while processing a payment.
 
+**Don't forget to allow internet access in your Android app ! Info [here](https://developer.android.com/develop/connectivity/network-ops/connecting) !**
+
 ```xml
 <application
         ...
