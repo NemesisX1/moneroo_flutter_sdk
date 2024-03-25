@@ -22,6 +22,38 @@ flutter pub add moneroo_flutter_sdk
 
 This package allows you to use [Moneroo](https://moneroo.io) to process payment within your Flutter app.
 
+## Configuration 🔧
+
+### Android
+
+Add this line in your `AndroidManifest.xml`. This will help you to avoid an ERR_CLEAR_TEXT_NOT_PERMITTED error while processing a payment.
+
+```xml
+<application
+        ...
+        android:usesCleartextTraffic="true"
+        ...
+        >
+        ...
+</application>
+```
+
+### IOS
+
+Add this line in your `Info.plist`. This will help you to avoid an ERR_CLEAR_TEXT_NOT_PERMITTED error while processing a payment.
+
+```xml
+<plist>
+...
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+         <true/>
+     </dict>
+...
+<plist>
+```
+
 ## Usage 🚀
 
 You can a have a full example [here](example/lib/main.dart). You can also your the `MonerooApi` class to implement the payment yourself without using the Moneroo widget provided by this package.
