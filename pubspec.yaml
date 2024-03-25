@@ -1,7 +1,6 @@
 name: moneroo_flutter_sdk
 description: Moneroo SDK for Flutter.
-version: 0.1.0
-publish_to: https://www.pub.dev
+version: 0.1.2
 homepage: https://docs.moneroo.io
 repository: https://github.com/NemesisX1/moneroo_flutter_sdk
 

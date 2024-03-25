@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2] - 2024-03-25
+
+### Chores
+
+- Update docs
+
 ## [0.1.1] - 2024-03-25
 
 ### Chores
