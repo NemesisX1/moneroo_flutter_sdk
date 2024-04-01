@@ -8,15 +8,11 @@
 - Adding more comments on payment info class
 - Making the core models class start by Moneroo
 
-# Changelog
-
 ## [0.1.4] - 2024-04-01
 
 ### Chores
 
 - Refactoring package structure
-
-# Changelog
 
 ## [0.1.3] - 2024-03-25
 
