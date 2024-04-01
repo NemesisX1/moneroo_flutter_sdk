@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0] - 2024-04-01
+
+### Fix
+
+- Fix platforms support
+
 ## [0.1.5] - 2024-04-01
 
 ### Update && Minor Breaking Changes
