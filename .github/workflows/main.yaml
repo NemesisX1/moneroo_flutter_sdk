@@ -1,4 +1,4 @@
-name: main
+name: ci
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -23,14 +23,3 @@ jobs:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       flutter_channel: stable
-  
-  analyse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
-
-      - run: dart pub get
-      - run: dart format --output=none --set-exit-if-changed .
-      - run: dart analyze
-

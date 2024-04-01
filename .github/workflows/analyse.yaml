@@ -7,6 +7,11 @@ on:
 
 jobs:
     
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_channel: stable
+
   analyse:
     runs-on: ubuntu-latest
     steps:
@@ -16,4 +21,3 @@ jobs:
       - run: dart pub get
       - run: dart format --output=none --set-exit-if-changed .
       - run: dart analyze
-
