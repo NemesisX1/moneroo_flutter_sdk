@@ -30,7 +30,7 @@ void main() {
     });
 
     test('can verify a transaction', () async {
-      final paymentInfos = await api.getPaymentInfos(
+      final paymentInfos = await api.getMonerooPaymentInfos(
         paymentId: paymentId,
       );
 

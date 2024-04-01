@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 builder: (context) => Moneroo(
                   amount: 1,
                   apiKey: 'YOUR_API_KEY',
-                  currency: MonerooCurency.XOF,
+                  currency: MonerooCurrency.XOF,
                   customer: MonerooCustomer(
                     email: 'email@gmail.com',
                     firstName: 'firstname',

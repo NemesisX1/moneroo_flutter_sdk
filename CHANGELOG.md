@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.5] - 2024-04-01
+
+### Update && Minor Breaking Changes
+
+- Adding all the currencies and comment about them
+- Adding more comment on payment info class
+- Making the core models class start by Moneroo
+
+# Changelog
+
 ## [0.1.4] - 2024-04-01
 
 ### Chores

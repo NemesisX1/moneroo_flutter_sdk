@@ -40,7 +40,7 @@ class Moneroo extends StatefulWidget {
   final int amount;
 
   ///. The payment's currency
-  final MonerooCurency currency;
+  final MonerooCurrency currency;
 
   ///. The payment's customer
   final MonerooCustomer customer;
@@ -57,7 +57,7 @@ class Moneroo extends StatefulWidget {
 
   /// A callback function that is called once the payment is processed wheiter
   /// or not it succeed. You can have infos about that using the infos parameter
-  final void Function(PaymentInfos infos, BuildContext context)
+  final void Function(MonerooPaymentInfos infos, BuildContext context)
       onPaymentCompleted;
 
   /// A callback function to handle errors that will occur
@@ -200,7 +200,7 @@ class _MonerooState extends State<Moneroo> {
 
   Future<void> handlePaymentCallback(BuildContext context) async {
     try {
-      final paymentInfos = await _api.getPaymentInfos(
+      final paymentInfos = await _api.getMonerooPaymentInfos(
         paymentId: _paymentId!,
       );
 

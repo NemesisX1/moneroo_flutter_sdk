@@ -6,7 +6,8 @@ part of 'payment_infos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentInfos _$PaymentInfosFromJson(Map<String, dynamic> json) => PaymentInfos(
+MonerooPaymentInfos _$MonerooPaymentInfosFromJson(Map<String, dynamic> json) =>
+    MonerooPaymentInfos(
       id: json['id'] as String?,
       status: $enumDecodeNullable(_$MonerooStatusEnumMap, json['status']),
       isProcessed: json['is_processed'] as bool?,
@@ -22,12 +23,24 @@ PaymentInfos _$PaymentInfosFromJson(Map<String, dynamic> json) => PaymentInfos(
       initiatedAt: json['initiated_at'] == null
           ? null
           : DateTime.parse(json['initiated_at'] as String),
+      metadata: json['metadata'],
+      app: json['app'] == null
+          ? null
+          : App.fromJson(json['app'] as Map<String, dynamic>),
+      customer: json['customer'] == null
+          ? null
+          : MonerooCustomer.fromJson(json['customer'] as Map<String, dynamic>),
+      capture: json['capture'] == null
+          ? null
+          : Capture.fromJson(json['capture'] as Map<String, dynamic>),
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
     );
 
-Map<String, dynamic> _$PaymentInfosToJson(PaymentInfos instance) =>
+Map<String, dynamic> _$MonerooPaymentInfosToJson(
+  MonerooPaymentInfos instance,
+) =>
     <String, dynamic>{
       'id': instance.id,
       'status': _$MonerooStatusEnumMap[instance.status],
@@ -40,6 +53,10 @@ Map<String, dynamic> _$PaymentInfosToJson(PaymentInfos instance) =>
       'return_url': instance.returnUrl,
       'environment': instance.environment,
       'initiated_at': instance.initiatedAt?.toIso8601String(),
+      'metadata': instance.metadata,
+      'app': instance.app,
+      'customer': instance.customer,
+      'capture': instance.capture,
       'created_at': instance.createdAt?.toIso8601String(),
     };
 
@@ -271,42 +288,4 @@ Map<String, dynamic> _$MethodToJson(Method instance) => <String, dynamic>{
       'name': instance.name,
       'short_code': instance.shortCode,
       'icon_url': instance.iconUrl,
-    };
-
-Customer _$CustomerFromJson(Map<String, dynamic> json) => Customer(
-      id: json['id'] as String?,
-      firstName: json['first_name'] as String?,
-      lastName: json['last_name'] as String?,
-      email: json['email'] as String?,
-      phone: json['phone'],
-      address: json['address'],
-      city: json['city'],
-      state: json['state'],
-      countryCode: json['country_code'],
-      country: json['country'],
-      zipCode: json['zip_code'],
-      profileUrl: json['profile_url'] as String?,
-      createdAt: json['created_at'] == null
-          ? null
-          : DateTime.parse(json['created_at'] as String),
-      updatedAt: json['updated_at'] == null
-          ? null
-          : DateTime.parse(json['updated_at'] as String),
-    );
-
-Map<String, dynamic> _$CustomerToJson(Customer instance) => <String, dynamic>{
-      'id': instance.id,
-      'first_name': instance.firstName,
-      'last_name': instance.lastName,
-      'email': instance.email,
-      'phone': instance.phone,
-      'address': instance.address,
-      'city': instance.city,
-      'state': instance.state,
-      'country_code': instance.countryCode,
-      'country': instance.country,
-      'zip_code': instance.zipCode,
-      'profile_url': instance.profileUrl,
-      'created_at': instance.createdAt?.toIso8601String(),
-      'updated_at': instance.updatedAt?.toIso8601String(),
     };

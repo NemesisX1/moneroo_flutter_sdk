@@ -1,14 +1,14 @@
 /// Base class to handle API response
-class ApiResponse {
+class MonerooApiResponse {
   ///
-  ApiResponse({
+  MonerooApiResponse({
     //  required this.success,
     required this.message,
     required this.data,
   });
 
   ///
-  ApiResponse.fromJson(Map<String, dynamic> json) {
+  MonerooApiResponse.fromJson(Map<String, dynamic> json) {
     // success = json['success'] as bool;
     message = json['message'] as String;
     data = json['data'] as Map<String, dynamic>;

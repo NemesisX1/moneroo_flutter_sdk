@@ -40,7 +40,7 @@ class MonerooApi {
   Future<MonerooPayment> initPayment({
     required int amount,
     required MonerooCustomer customer,
-    MonerooCurency currency = MonerooCurency.XOF,
+    MonerooCurrency currency = MonerooCurrency.XOF,
     String? description,
     String? callbackUrl,
     Map<String, dynamic>? metadata,
@@ -57,7 +57,7 @@ class MonerooApi {
         },
       );
 
-      final apiResponse = ApiResponse.fromJson(res.data!);
+      final apiResponse = MonerooApiResponse.fromJson(res.data!);
 
       return MonerooPayment.fromJson(apiResponse.data);
     } on DioException catch (e) {
@@ -76,7 +76,7 @@ class MonerooApi {
 
   /// Allow you to retrieve data about a payment given its paymentID. Can be
   /// helpful to get the current status of a payment.
-  Future<PaymentInfos> getPaymentInfos({
+  Future<MonerooPaymentInfos> getMonerooPaymentInfos({
     required String paymentId,
   }) async {
     try {
@@ -85,9 +85,9 @@ class MonerooApi {
         '/${apiVersion.name}${Endpoints.payments}/$paymentId${Endpoints.verify}',
       );
 
-      final apiResponse = ApiResponse.fromJson(res.data!);
+      final apiResponse = MonerooApiResponse.fromJson(res.data!);
 
-      return PaymentInfos.fromJson(apiResponse.data);
+      return MonerooPaymentInfos.fromJson(apiResponse.data);
     } on DioException catch (e) {
       if (e.response == null) throw ServiceUnavailableException();
 
