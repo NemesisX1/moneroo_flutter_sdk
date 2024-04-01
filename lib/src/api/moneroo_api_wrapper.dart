@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:moneroo_flutter_sdk/src/apis/endpoints.dart';
-import 'package:moneroo_flutter_sdk/src/apis/exceptions.dart';
-import 'package:moneroo_flutter_sdk/src/helpers/enums.dart';
+import 'package:moneroo_flutter_sdk/src/common/enums.dart';
+import 'package:moneroo_flutter_sdk/src/common/exceptions.dart';
 import 'package:moneroo_flutter_sdk/src/models/api_response.dart';
 import 'package:moneroo_flutter_sdk/src/models/customer.dart';
 import 'package:moneroo_flutter_sdk/src/models/payment.dart';

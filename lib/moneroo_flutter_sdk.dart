@@ -1,8 +1,8 @@
 /// A Very Good Project created by Very Good CLI.
 library;
 
-export 'src/apis/moneroo_api_wrapper.dart';
-export 'src/helpers/enums.dart';
+export 'src/api/moneroo_api_wrapper.dart';
+export 'src/common/enums.dart';
 export 'src/models/customer.dart';
 export 'src/models/payment.dart';
 export 'src/models/payment_infos.dart';

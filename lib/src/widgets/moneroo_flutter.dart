@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:moneroo_flutter_sdk/src/apis/exceptions.dart';
-import 'package:moneroo_flutter_sdk/src/apis/moneroo_api_wrapper.dart';
-import 'package:moneroo_flutter_sdk/src/helpers/enums.dart';
+import 'package:moneroo_flutter_sdk/src/api/moneroo_api_wrapper.dart';
+import 'package:moneroo_flutter_sdk/src/commons/enums.dart';
+import 'package:moneroo_flutter_sdk/src/commons/exceptions.dart';
 import 'package:moneroo_flutter_sdk/src/models/customer.dart';
 import 'package:moneroo_flutter_sdk/src/models/payment_infos.dart';
 import 'package:webview_flutter/webview_flutter.dart';
