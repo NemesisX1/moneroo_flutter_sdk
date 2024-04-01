@@ -4,8 +4,8 @@
 
 ### Update && Minor Breaking Changes
 
-- Adding all the currencies and comment about them
-- Adding more comment on payment info class
+- Adding all the currencies and commenting about them
+- Adding more comments on payment info class
 - Making the core models class start by Moneroo
 
 # Changelog
