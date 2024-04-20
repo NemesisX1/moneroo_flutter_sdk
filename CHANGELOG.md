@@ -1,8 +1,14 @@
 # Changelog
 
+## [0.2.2] - 2024-04-20
+
+### Chores
+
+- Update README.md
+
 ## [0.2.1] - 2024-04-20
 
-### Fix
+### Chores
 
 - Update README.md
 
