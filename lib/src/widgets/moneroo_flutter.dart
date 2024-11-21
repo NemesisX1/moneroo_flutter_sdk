@@ -142,7 +142,7 @@ class _MonerooState extends State<Moneroo> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (value) async {
+      onPopInvokedWithResult: (value, _) async {
         if (_paymentId != null) {
           await handlePaymentCallback(context);
         }

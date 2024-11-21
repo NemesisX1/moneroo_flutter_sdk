@@ -101,24 +101,4 @@ class MonerooApi {
       throw error;
     }
   }
-
-  ///
-  // void handleException(DioException e) {
-  //   if (e.response?.statusCode == 422) {
-  //     throw InvalidPayloadException(
-  //       errors: (e.response?.data as Map<String, dynamic>)['errors'],
-  //       message:
-  //           (e.response?.data as Map<String, dynamic>)['message'] as String,
-  //     );
-  //   }
-
-  //   if (e.response?.statusCode == 401) {
-  //     throw UnauthorizedException(
-  //       errors: (e.response?.data as Map<String, dynamic>)['errors'],
-  //       message:
-  //           (e.response?.data as Map<String, dynamic>)['message'] as String,
-  //     );
-  //   }
-
-  // }
 }
