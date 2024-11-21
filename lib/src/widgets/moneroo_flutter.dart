@@ -57,7 +57,7 @@ class Moneroo extends StatefulWidget {
   final String? callbackUrl;
 
   /// Some metadata that you want to store about the payment on Moneroo
-  final Map<String, dynamic>? metadata;
+  final List<Map<String, dynamic>>? metadata;
 
   /// A callback function that is called once the payment is processed wheiter
   /// or not it succeed. You can have infos about that using the infos parameter
