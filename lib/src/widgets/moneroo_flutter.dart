@@ -24,6 +24,7 @@ class Moneroo extends StatefulWidget {
     required this.onPaymentCompleted,
     required this.onError,
     super.key,
+    this.displayDebugLog = false,
     this.sandbox = false,
     this.callbackUrl,
     this.metadata,
@@ -35,6 +36,9 @@ class Moneroo extends StatefulWidget {
   /// Defined whether or not Moneroo is in sandbox mode. The Default value
   /// is false
   final bool sandbox;
+
+  /// Allow debug display for log purpose
+  final bool displayDebugLog;
 
   ///. The payment's amount
   final int amount;
@@ -160,24 +164,32 @@ class _MonerooState extends State<Moneroo> {
                     ..setNavigationDelegate(
                       NavigationDelegate(
                         onProgress: (int progress) {
-                          debugPrint(
-                            'WebView is loading (progress : $progress%)',
-                          );
+                          if (widget.displayDebugLog) {
+                            debugPrint(
+                              'WebView is loading (progress : $progress%)',
+                            );
+                          }
                         },
                         onPageStarted: (String url) {
-                          debugPrint('Page started loading: $url');
+                          if (widget.displayDebugLog) {
+                            debugPrint('Page started loading: $url');
+                          }
                         },
                         onPageFinished: (String url) {
-                          debugPrint('Page finished loading: $url');
+                          if (widget.displayDebugLog) {
+                            debugPrint('Page finished loading: $url');
+                          }
                         },
                         onWebResourceError: (WebResourceError error) {
-                          debugPrint('''
+                          if (widget.displayDebugLog) {
+                            debugPrint('''
               Page resource error:
               code: ${error.errorCode}
               description: ${error.description}
               errorType: ${error.errorType}
               isForMainFrame: ${error.isForMainFrame}
               ''');
+                          }
 
                           widget.onError(error, context);
                         },
