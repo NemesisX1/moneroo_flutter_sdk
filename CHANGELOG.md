@@ -2,12 +2,6 @@
 
 ## [0.3.1] - 2025-02-22
 
-### Chores
-
-- Update README.md
-
-## [0.2.4] - 2025-02-22
-
 ### Added
 
 - Fetch available methods on Moneroo
