@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.0] - 2025-02-22
+
+### Chores
+
+- Update README.md
+
 ## [0.2.4] - 2025-02-22
 
 ### Added

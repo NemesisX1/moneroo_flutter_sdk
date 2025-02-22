@@ -1,6 +1,6 @@
 <div align="center">
 <a href="https://moneroo.io" title="Moneroo - Payment stack for Africa">
-    <img src="art/cover.png" alt="Moneroo website">
+    <img src="https://raw.githubusercontent.com/NemesisX1/moneroo_flutter_sdk/main/art/cover.png" alt="Moneroo website">
 </a>
 
 # Moneroo Flutter SDK
