@@ -1,8 +1,8 @@
 # Changelog
 
-## [0.2.4] - 2024-04-21
+## [0.2.4] - 2025-02-22
 
-### Features
+### Added
 
 - Fetch available methods on Moneroo
 - Metadata submission when initiate payment
