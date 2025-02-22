@@ -6,6 +6,7 @@ repository: https://github.com/moneroohq/moneroo_flutter
 platforms:
   android:
   ios:
+  web:
 
 environment:
   sdk: "^3.3.0"
