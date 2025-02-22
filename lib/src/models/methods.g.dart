@@ -6,8 +6,8 @@ part of 'methods.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MonerooMethod _$MonerooMethodFromJson(Map<String, dynamic> json) =>
-    MonerooMethod(
+MonerooRemoteMethod _$MonerooRemoteMethodFromJson(Map<String, dynamic> json) =>
+    MonerooRemoteMethod(
       name: json['name'] as String?,
       shortCode: json['short_code'] as String?,
       description: json['description'] as String?,
@@ -27,7 +27,8 @@ MonerooMethod _$MonerooMethodFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$MonerooMethodToJson(MonerooMethod instance) =>
+Map<String, dynamic> _$MonerooRemoteMethodToJson(
+        MonerooRemoteMethod instance) =>
     <String, dynamic>{
       'name': instance.name,
       'short_code': instance.shortCode,

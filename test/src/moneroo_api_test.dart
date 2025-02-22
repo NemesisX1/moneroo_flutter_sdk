@@ -5,15 +5,24 @@ import 'package:moneroo_flutter_sdk/moneroo_flutter_sdk.dart';
 
 void main() {
   final api = MonerooApi(
-    apiKey: 'pvk_za37ys|01JMPE1VE9WCY3J0ZFNFX47C2T',
+    apiKey: 'API-KEY',
   );
 
   group('MonerooApi', () {
     late String paymentId;
 
+    test('can get all the methods', () async {
+      final payment = await api.getMonerooPaymentMethods();
+
+      expect(
+        payment,
+        isNotEmpty,
+      );
+    });
+
     test('can init payment', () async {
       final payment = await api.initPayment(
-        amount: 1,
+        amount: 100,
         customer: MonerooCustomer(
           email: 'junior.medehou00@gmail.com',
           firstName: 'Elikem',

@@ -66,7 +66,7 @@ enum MonerooCurrency {
   RWF, //Airtel Rwanda (airtel_rw), MTN MoMo Rwanda (mtn_rw)
 }
 
-enum MonerooShortCode {
+enum MonerooMethod {
   djamo_ci,
   djamo_sandbox_ci,
   djamo_sn,

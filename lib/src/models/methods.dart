@@ -6,9 +6,9 @@ part 'methods.g.dart';
 @JsonSerializable()
 
 /// Moneroo available payment methods
-class MonerooMethod {
+class MonerooRemoteMethod {
   ///
-  MonerooMethod({
+  MonerooRemoteMethod({
     required this.name,
     required this.shortCode,
     required this.description,
@@ -21,11 +21,11 @@ class MonerooMethod {
   });
 
   ///
-  factory MonerooMethod.fromJson(Map<String, dynamic> json) =>
-      _$MonerooMethodFromJson(json);
+  factory MonerooRemoteMethod.fromJson(Map<String, dynamic> json) =>
+      _$MonerooRemoteMethodFromJson(json);
 
   ///
-  Map<String, dynamic> toJson() => _$MonerooMethodToJson(this);
+  Map<String, dynamic> toJson() => _$MonerooRemoteMethodToJson(this);
 
   ///
   final String? name;
