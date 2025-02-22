@@ -28,6 +28,7 @@ class Moneroo extends StatefulWidget {
     this.sandbox = false,
     this.callbackUrl,
     this.metadata,
+    this.methods,
   });
 
   /// The Moneroo API key
@@ -58,6 +59,9 @@ class Moneroo extends StatefulWidget {
 
   /// Some metadata that you want to store about the payment on Moneroo
   final Map<String, dynamic>? metadata;
+
+  /// You can specify the payment methods that will be use with the payment link
+  final List<MonerooMethod>? methods;
 
   /// A callback function that is called once the payment is processed wheiter
   /// or not it succeed. You can have infos about that using the infos parameter
@@ -126,6 +130,7 @@ class _MonerooState extends State<Moneroo> {
         description: widget.description,
         callbackUrl: widget.callbackUrl,
         metadata: widget.metadata,
+        methods: widget.methods,
       );
 
       setState(() {
