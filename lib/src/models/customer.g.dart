@@ -19,24 +19,15 @@ MonerooCustomer _$MonerooCustomerFromJson(Map<String, dynamic> json) =>
       zip: json['zip'] as String?,
     );
 
-Map<String, dynamic> _$MonerooCustomerToJson(MonerooCustomer instance) {
-  final val = <String, dynamic>{
-    'email': instance.email,
-    'first_name': instance.firstName,
-    'last_name': instance.lastName,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('phone', instance.phone);
-  writeNotNull('address', instance.address);
-  writeNotNull('city', instance.city);
-  writeNotNull('state', instance.state);
-  writeNotNull('country', instance.country);
-  writeNotNull('zip', instance.zip);
-  return val;
-}
+Map<String, dynamic> _$MonerooCustomerToJson(MonerooCustomer instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
+      if (instance.phone case final value?) 'phone': value,
+      if (instance.address case final value?) 'address': value,
+      if (instance.city case final value?) 'city': value,
+      if (instance.state case final value?) 'state': value,
+      if (instance.country case final value?) 'country': value,
+      if (instance.zip case final value?) 'zip': value,
+    };

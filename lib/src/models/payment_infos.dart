@@ -193,7 +193,7 @@ class Capture {
   final dynamic failureErrorType;
 
   ///
-  final Metadata? metadata;
+  final Map<String, dynamic>? metadata;
 
   ///
   final int? amount;
@@ -493,44 +493,6 @@ class Gateway {
 
   ///
   Map<String, dynamic> toJson() => _$GatewayToJson(this);
-}
-
-/// Payment related metadata.This metadata is related to the payment capture.
-@JsonSerializable()
-class Metadata {
-  ///
-  Metadata({
-    required this.networkTransactionId,
-    required this.amountDebited,
-    required this.commission,
-    required this.fees,
-    required this.selectedPaymentMethod,
-  });
-
-  ///
-  factory Metadata.fromJson(Map<String, dynamic> json) =>
-      _$MetadataFromJson(json);
-
-  ///
-  @JsonKey(name: 'network_transaction_id')
-  final String? networkTransactionId;
-
-  ///
-  @JsonKey(name: 'amount_debited')
-  final dynamic amountDebited;
-
-  ///
-  final dynamic commission;
-
-  ///
-  final String? fees;
-
-  ///
-  @JsonKey(name: 'selected_payment_method')
-  final String? selectedPaymentMethod;
-
-  ///
-  Map<String, dynamic> toJson() => _$MetadataToJson(this);
 }
 
 ///

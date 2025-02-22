@@ -24,9 +24,11 @@ class Moneroo extends StatefulWidget {
     required this.onPaymentCompleted,
     required this.onError,
     super.key,
+    this.displayDebugLog = false,
     this.sandbox = false,
     this.callbackUrl,
     this.metadata,
+    this.methods,
   });
 
   /// The Moneroo API key
@@ -35,6 +37,9 @@ class Moneroo extends StatefulWidget {
   /// Defined whether or not Moneroo is in sandbox mode. The Default value
   /// is false
   final bool sandbox;
+
+  /// Allow debug display for log purpose
+  final bool displayDebugLog;
 
   ///. The payment's amount
   final int amount;
@@ -54,6 +59,9 @@ class Moneroo extends StatefulWidget {
 
   /// Some metadata that you want to store about the payment on Moneroo
   final Map<String, dynamic>? metadata;
+
+  /// You can specify the payment methods that will be use with the payment link
+  final List<MonerooMethod>? methods;
 
   /// A callback function that is called once the payment is processed wheiter
   /// or not it succeed. You can have infos about that using the infos parameter
@@ -122,6 +130,7 @@ class _MonerooState extends State<Moneroo> {
         description: widget.description,
         callbackUrl: widget.callbackUrl,
         metadata: widget.metadata,
+        methods: widget.methods,
       );
 
       setState(() {
@@ -138,7 +147,7 @@ class _MonerooState extends State<Moneroo> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (value) async {
+      onPopInvokedWithResult: (value, _) async {
         if (_paymentId != null) {
           await handlePaymentCallback(context);
         }
@@ -160,24 +169,32 @@ class _MonerooState extends State<Moneroo> {
                     ..setNavigationDelegate(
                       NavigationDelegate(
                         onProgress: (int progress) {
-                          debugPrint(
-                            'WebView is loading (progress : $progress%)',
-                          );
+                          if (widget.displayDebugLog) {
+                            debugPrint(
+                              'WebView is loading (progress : $progress%)',
+                            );
+                          }
                         },
                         onPageStarted: (String url) {
-                          debugPrint('Page started loading: $url');
+                          if (widget.displayDebugLog) {
+                            debugPrint('Page started loading: $url');
+                          }
                         },
                         onPageFinished: (String url) {
-                          debugPrint('Page finished loading: $url');
+                          if (widget.displayDebugLog) {
+                            debugPrint('Page finished loading: $url');
+                          }
                         },
                         onWebResourceError: (WebResourceError error) {
-                          debugPrint('''
+                          if (widget.displayDebugLog) {
+                            debugPrint('''
               Page resource error:
               code: ${error.errorCode}
               description: ${error.description}
               errorType: ${error.errorType}
               isForMainFrame: ${error.isForMainFrame}
               ''');
+                          }
 
                           widget.onError(error, context);
                         },
