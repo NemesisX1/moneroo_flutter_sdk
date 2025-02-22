@@ -1,0 +1,1106 @@
+[
+    {
+        "name": "Djamo CI",
+        "short_code": "djamo_ci",
+        "description": "Djamo is financial super app for consumers in Francophone Africa",
+        "gateways": [
+            {
+                "name": "Djamo Business CI",
+                "short_code": "djamo_ci",
+                "description": "Send money from Djamo users in Ivory Coast. Djamo is a digital bank and investment service in French-speaking Africa.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg"
+            },
+            {
+                "name": "Djamo Business CI (Sandbox)",
+                "short_code": "djamo_sandbox_ci",
+                "description": "Test transactions with Djamo users in Ivory Coast using the Djamo sandbox mode for a secure trial environment.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Cote d'Ivoire",
+                "code": "CI",
+                "alpha_3_code": "CIV",
+                "dial_code": "+225",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/CI.svg"
+            }
+        ]
+    },
+    {
+        "name": "Djamo SN",
+        "short_code": "djamo_sn",
+        "description": "Djamo is financial super app for consumers in Francophone Africa",
+        "gateways": [
+            {
+                "name": "Djamo Business SN",
+                "short_code": "djamo_sn",
+                "description": "Send money from Djamo users in Senegal. Djamo is a digital bank and investment service in French-speaking Africa.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg"
+            },
+            {
+                "name": "Djamo Business SN (Sandbox)",
+                "short_code": "djamo_sandbox_sn",
+                "description": "Djamo sandbox mode in Senegal lets you simulate transactions, ensuring a secure testing phase for your integrations.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/djamo.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Senegal",
+                "code": "SN",
+                "alpha_3_code": "SEN",
+                "dial_code": "+221",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/SN.svg"
+            }
+        ]
+    },
+    {
+        "name": "E-Money Senegal",
+        "short_code": "e_money_sn",
+        "description": "Mobile money service provided by Expresso phone operator in Senegal.",
+        "gateways": [
+            {
+                "name": "Hub 2 - SN",
+                "short_code": "hubtwo_payout_sn",
+                "description": "Payout to your customers in Senegal with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/e_money_sn.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Senegal",
+                "code": "SN",
+                "alpha_3_code": "SEN",
+                "dial_code": "+221",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/SN.svg"
+            }
+        ]
+    },
+    {
+        "name": "Free Money Senegal",
+        "short_code": "freemoney_sn",
+        "description": "Mobile money service provided by Free phone operator in Senegal.",
+        "gateways": [
+            {
+                "name": "Hub 2 - SN",
+                "short_code": "hubtwo_payout_sn",
+                "description": "Payout to your customers in Senegal with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/freemoney_sn.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Senegal",
+                "code": "SN",
+                "alpha_3_code": "SEN",
+                "dial_code": "+221",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/SN.svg"
+            }
+        ]
+    },
+    {
+        "name": "Moov Burkina Faso",
+        "short_code": "moov_bf",
+        "description": "Mobile money service provided by Moov phone operator in Burkina Faso.",
+        "gateways": [
+            {
+                "name": "Hub 2 - BF",
+                "short_code": "hubtwo_payout_bf",
+                "description": "Payout to your customers in Burkina Faso with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/moov_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Burkina Faso",
+                "code": "BF",
+                "alpha_3_code": "BFA",
+                "dial_code": "+226",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/BF.svg"
+            }
+        ]
+    },
+    {
+        "name": "Moov Money Benin",
+        "short_code": "moov_bj",
+        "description": "Mobile money service provided by Moov phone operator in Benin.",
+        "gateways": [
+            {
+                "name": "Hub 2 - BJ",
+                "short_code": "hubtwo_payout_bj",
+                "description": "Payout to your customers in Benin with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Qosic BJ",
+                "short_code": "qosic_bj",
+                "description": "Enable payments and payout in Benin through Qosic, supporting mobile money services like MTN MoMo, Moov Money, and bank cards.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/qosic.svg"
+            },
+            {
+                "name": "Kkiapay",
+                "short_code": "kkiapay",
+                "description": "Utilize Kkiapay for customers in Benin, Ivory Coast, Togo, and Senegal, offering payment options like mobile money, bank cards, and wallets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/kkiapay.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "Kkiapay (Sandbox)",
+                "short_code": "kkiapay_sandbox",
+                "description": "Kkiapay sandbox mode enables testing for transactions with mobile money, bank cards, and wallets in select West African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/kkiapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/moov_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Benin",
+                "code": "BJ",
+                "alpha_3_code": "BEN",
+                "dial_code": "+229",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/BJ.svg"
+            }
+        ]
+    },
+    {
+        "name": "Moov Money CI",
+        "short_code": "moov_ci",
+        "description": "Mobile money service provided by Moov phone operator in Ivory Coast.",
+        "gateways": [
+            {
+                "name": "Hub 2 - CI",
+                "short_code": "hubtwo_payout_ci",
+                "description": "Payout to your customers in Ivory Coast with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/moov_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Cote d'Ivoire",
+                "code": "CI",
+                "alpha_3_code": "CIV",
+                "dial_code": "+225",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/CI.svg"
+            }
+        ]
+    },
+    {
+        "name": "Moov Money Mali",
+        "short_code": "moov_ml",
+        "description": "Mobile money service provided by Moov phone operator in Mali.",
+        "gateways": [
+            {
+                "name": "Hub 2 - ML",
+                "short_code": "hubtwo_payout_ml",
+                "description": "Payout to your customers in Mali with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/moov_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Mali",
+                "code": "ML",
+                "alpha_3_code": "MLI",
+                "dial_code": "+223",
+                "currency": "XOF",
+                "currency_symbol": "Fr",
+                "flag": "https://cdn.axazara.com/flags/svg/ML.svg"
+            }
+        ]
+    },
+    {
+        "name": "Moov Money Togo",
+        "short_code": "moov_tg",
+        "description": "Mobile money service provided by Moov phone operator in Togo.",
+        "gateways": [
+            {
+                "name": "Qosic TG",
+                "short_code": "qosic_tg",
+                "description": "Qosic allows Togolese customers to pay via mobile money options like TMoney, Moov Money, and bank cards.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/qosic.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/moov_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Togo",
+                "code": "TG",
+                "alpha_3_code": "TGO",
+                "dial_code": "+228",
+                "currency": "XOF",
+                "currency_symbol": "Fr",
+                "flag": "https://cdn.axazara.com/flags/svg/TG.svg"
+            }
+        ]
+    },
+    {
+        "name": "MTN MoMo Benin",
+        "short_code": "mtn_bj",
+        "description": "Mobile money service provided by MTN phone operator in Benin.",
+        "gateways": [
+            {
+                "name": "Hub 2 - BJ",
+                "short_code": "hubtwo_payout_bj",
+                "description": "Payout to your customers in Benin with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Qosic BJ",
+                "short_code": "qosic_bj",
+                "description": "Enable payments and payout in Benin through Qosic, supporting mobile money services like MTN MoMo, Moov Money, and bank cards.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/qosic.svg"
+            },
+            {
+                "name": "Kkiapay",
+                "short_code": "kkiapay",
+                "description": "Utilize Kkiapay for customers in Benin, Ivory Coast, Togo, and Senegal, offering payment options like mobile money, bank cards, and wallets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/kkiapay.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "Kkiapay (Sandbox)",
+                "short_code": "kkiapay_sandbox",
+                "description": "Kkiapay sandbox mode enables testing for transactions with mobile money, bank cards, and wallets in select West African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/kkiapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/momo.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Benin",
+                "code": "BJ",
+                "alpha_3_code": "BEN",
+                "dial_code": "+229",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/BJ.svg"
+            }
+        ]
+    },
+    {
+        "name": "MTN MoMo CI",
+        "short_code": "mtn_ci",
+        "description": "Mobile money service provided by MTN phone operator in Ivory Coast.",
+        "gateways": [
+            {
+                "name": "Hub 2 - CI",
+                "short_code": "hubtwo_payout_ci",
+                "description": "Payout to your customers in Ivory Coast with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/momo.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Cote d'Ivoire",
+                "code": "CI",
+                "alpha_3_code": "CIV",
+                "dial_code": "+225",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/CI.svg"
+            }
+        ]
+    },
+    {
+        "name": "Orange Burkina Faso",
+        "short_code": "orange_bf",
+        "description": "Mobile money service provided by Orange phone operator Orange in Burkina Faso.",
+        "gateways": [
+            {
+                "name": "Hub 2 - BF",
+                "short_code": "hubtwo_payout_bf",
+                "description": "Payout to your customers in Burkina Faso with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/orange_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Burkina Faso",
+                "code": "BF",
+                "alpha_3_code": "BFA",
+                "dial_code": "+226",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/BF.svg"
+            }
+        ]
+    },
+    {
+        "name": "Orange Money CI",
+        "short_code": "orange_ci",
+        "description": "Mobile money service provided by Orange phone operator in Ivory Coast.",
+        "gateways": [
+            {
+                "name": "Hub 2 - CI",
+                "short_code": "hubtwo_payout_ci",
+                "description": "Payout to your customers in Ivory Coast with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/orange_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Cote d'Ivoire",
+                "code": "CI",
+                "alpha_3_code": "CIV",
+                "dial_code": "+225",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/CI.svg"
+            }
+        ]
+    },
+    {
+        "name": "Orange Money Mali",
+        "short_code": "orange_ml",
+        "description": "Mobile money service provided by Orange phone operator Orange in Mali.",
+        "gateways": [
+            {
+                "name": "Hub 2 - ML",
+                "short_code": "hubtwo_payout_ml",
+                "description": "Payout to your customers in Mali with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/orange_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Mali",
+                "code": "ML",
+                "alpha_3_code": "MLI",
+                "dial_code": "+223",
+                "currency": "XOF",
+                "currency_symbol": "Fr",
+                "flag": "https://cdn.axazara.com/flags/svg/ML.svg"
+            }
+        ]
+    },
+    {
+        "name": "Orange Money Senegal",
+        "short_code": "orange_sn",
+        "description": "Mobile money service provided by Orange phone operator Orange in Senegal.",
+        "gateways": [
+            {
+                "name": "Hub 2 - SN",
+                "short_code": "hubtwo_payout_sn",
+                "description": "Payout to your customers in Senegal with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "PawaPay",
+                "short_code": "pawapay",
+                "description": "Pawapay specializes in mobile money payments, offering a broad reach across various African markets.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "PawaPay (Sandbox)",
+                "short_code": "pawapay_sandbox",
+                "description": "Pawapay sandbox mode offers a risk-free environment to test mobile money transactions across many African countries.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/pawapay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/orange_money.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Senegal",
+                "code": "SN",
+                "alpha_3_code": "SEN",
+                "dial_code": "+221",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/SN.svg"
+            }
+        ]
+    },
+    {
+        "name": "Togocel Money",
+        "short_code": "togocel",
+        "description": "Mobile money service provided by Togocel phone operator in Togo.",
+        "gateways": [
+            {
+                "name": "Qosic TG",
+                "short_code": "qosic_tg",
+                "description": "Qosic allows Togolese customers to pay via mobile money options like TMoney, Moov Money, and bank cards.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/qosic.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            },
+            {
+                "name": "MagmaOnePay",
+                "short_code": "one_pay",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            },
+            {
+                "name": "Magma OnePay",
+                "short_code": "one_pay_sandbox",
+                "description": "Magma One Pay is a payment gateway that allows businesses to receive online payments via mobile money.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/one_pay.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/togocel.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Togo",
+                "code": "TG",
+                "alpha_3_code": "TGO",
+                "dial_code": "+228",
+                "currency": "XOF",
+                "currency_symbol": "Fr",
+                "flag": "https://cdn.axazara.com/flags/svg/TG.svg"
+            }
+        ]
+    },
+    {
+        "name": "Wave CI",
+        "short_code": "wave_ci",
+        "description": "Mobile money service provided by Wave in Ivory Coast.",
+        "gateways": [
+            {
+                "name": "Wave Business CI",
+                "short_code": "wave_business_payout_ci",
+                "description": "gateways.wave_business_payout_ci",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/wave.svg"
+            },
+            {
+                "name": "Hub 2 - CI",
+                "short_code": "hubtwo_payout_ci",
+                "description": "Payout to your customers in Ivory Coast with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/wave.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Cote d'Ivoire",
+                "code": "CI",
+                "alpha_3_code": "CIV",
+                "dial_code": "+225",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/CI.svg"
+            }
+        ]
+    },
+    {
+        "name": "Wave Senegal",
+        "short_code": "wave_sn",
+        "description": "Mobile money service provided by Wave in Senegal.",
+        "gateways": [
+            {
+                "name": "Hub 2 - SN",
+                "short_code": "hubtwo_payout_sn",
+                "description": "Payout to your customers in Senegal with HubTwo",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/hub2.svg"
+            },
+            {
+                "name": "Paydunya",
+                "short_code": "paydunya",
+                "description": "Enable Paydunya to accept payments via various methods, including mobile money, bank cards, and wallets, for African customers.",
+                "icon_url": "https://assets.cdn.moneroo.io/icons/circle/paydunya.svg"
+            }
+        ],
+        "icon_url": "https://assets.cdn.moneroo.io/icons/circle/wave.svg",
+        "is_enabled": true,
+        "fields": [
+            {
+                "label": "Mobile money number",
+                "type": "number",
+                "name": "msisdn",
+                "length": null
+            }
+        ],
+        "currency": {
+            "name": "West African CFA Franc",
+            "symbol": "F CFA",
+            "code": "XOF",
+            "icon_url": "https://assets.cdn.moneroo.io/currencies/XOF.svg"
+        },
+        "countries": [
+            {
+                "name": "Senegal",
+                "code": "SN",
+                "alpha_3_code": "SEN",
+                "dial_code": "+221",
+                "currency": "XOF",
+                "currency_symbol": "CFA",
+                "flag": "https://cdn.axazara.com/flags/svg/SN.svg"
+            }
+        ]
+    }
+]

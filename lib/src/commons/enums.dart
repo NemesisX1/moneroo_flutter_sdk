@@ -66,6 +66,44 @@ enum MonerooCurrency {
   RWF, //Airtel Rwanda (airtel_rw), MTN MoMo Rwanda (mtn_rw)
 }
 
+enum MonerooShortCode {
+  djamo_ci,
+  djamo_sandbox_ci,
+  djamo_sn,
+  djamo_sandbox_sn,
+  e_money_sn,
+  hubtwo_payout_sn,
+  paydunya,
+  freemoney_sn,
+  pawapay,
+  one_pay,
+  one_pay_sandbox,
+  pawapay_sandbox,
+  moov_bf,
+  hubtwo_payout_bf,
+  moov_bj,
+  hubtwo_payout_bj,
+  qosic_bj,
+  kkiapay,
+  kkiapay_sandbox,
+  moov_ci,
+  hubtwo_payout_ci,
+  moov_ml,
+  hubtwo_payout_ml,
+  moov_tg,
+  qosic_tg,
+  mtn_bj,
+  mtn_ci,
+  orange_bf,
+  orange_ci,
+  orange_ml,
+  orange_sn,
+  togocel,
+  wave_ci,
+  wave_business_payout_ci,
+  wave_sn
+}
+
 /// Give the current status of a payment
 enum MonerooStatus {
   initiated,

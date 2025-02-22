@@ -43,7 +43,7 @@ class MonerooApi {
     MonerooCurrency currency = MonerooCurrency.XOF,
     String? description,
     String? callbackUrl,
-    List<Map<String, dynamic>>? metadata,
+    Map<String, dynamic>? metadata,
   }) async {
     try {
       final res = await _dio.post<Map<String, dynamic>>(
@@ -54,7 +54,7 @@ class MonerooApi {
           'description': description ?? 'From Moneroo Flutter package',
           'customer': customer.toJson(),
           'return_url': callbackUrl ?? 'https://example.com',
-          'metadata': metadata ?? [],
+          'metadata': metadata,
         },
       );
 

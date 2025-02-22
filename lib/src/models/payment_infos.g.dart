@@ -12,7 +12,7 @@ MonerooPaymentInfos _$MonerooPaymentInfosFromJson(Map<String, dynamic> json) =>
       status: $enumDecodeNullable(_$MonerooStatusEnumMap, json['status']),
       isProcessed: json['is_processed'] as bool?,
       processedAt: json['processed_at'],
-      amount: json['amount'] as int?,
+      amount: (json['amount'] as num?)?.toInt(),
       currency: json['currency'] == null
           ? null
           : Currency.fromJson(json['currency'] as Map<String, dynamic>),
@@ -39,8 +39,7 @@ MonerooPaymentInfos _$MonerooPaymentInfosFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$MonerooPaymentInfosToJson(
-  MonerooPaymentInfos instance,
-) =>
+        MonerooPaymentInfos instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status': _$MonerooStatusEnumMap[instance.status],
@@ -101,10 +100,8 @@ Capture _$CaptureFromJson(Map<String, dynamic> json) => Capture(
       failureMessage: json['failure_message'],
       failureErrorCode: json['failure_error_code'],
       failureErrorType: json['failure_error_type'],
-      metadata: json['metadata'] == null
-          ? null
-          : Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
-      amount: json['amount'] as int?,
+      metadata: json['metadata'] as Map<String, dynamic>?,
+      amount: (json['amount'] as num?)?.toInt(),
       amountFormatted: json['amount_formatted'] as String?,
       currency: json['currency'] == null
           ? null
@@ -208,14 +205,14 @@ Currency _$CurrencyFromJson(Map<String, dynamic> json) => Currency(
       name: json['name'] as String?,
       symbol: json['symbol'] as String?,
       symbolFirst: json['symbol_first'] as bool?,
-      decimals: json['decimals'] as int?,
+      decimals: (json['decimals'] as num?)?.toInt(),
       decimalMark: json['decimal_mark'] as String?,
       thousandsSeparator: json['thousands_separator'] as String?,
       subunit: json['subunit'] as String?,
-      subunitToUnit: json['subunit_to_unit'] as int?,
+      subunitToUnit: (json['subunit_to_unit'] as num?)?.toInt(),
       symbolNative: json['symbol_native'] as String?,
-      decimalDigits: json['decimal_digits'] as int?,
-      rounding: json['rounding'] as int?,
+      decimalDigits: (json['decimal_digits'] as num?)?.toInt(),
+      rounding: (json['rounding'] as num?)?.toInt(),
       code: json['code'] as String?,
       namePlural: json['name_plural'] as String?,
       iconUrl: json['icon_url'] as String?,
@@ -258,22 +255,6 @@ Map<String, dynamic> _$GatewayToJson(Gateway instance) => <String, dynamic>{
       'transaction_id': instance.transactionId,
       'transaction_status': instance.transactionStatus,
       'transaction_failure_message': instance.transactionFailureMessage,
-    };
-
-Metadata _$MetadataFromJson(Map<String, dynamic> json) => Metadata(
-      networkTransactionId: json['network_transaction_id'] as String?,
-      amountDebited: json['amount_debited'],
-      commission: json['commission'],
-      fees: json['fees'] as String?,
-      selectedPaymentMethod: json['selected_payment_method'] as String?,
-    );
-
-Map<String, dynamic> _$MetadataToJson(Metadata instance) => <String, dynamic>{
-      'network_transaction_id': instance.networkTransactionId,
-      'amount_debited': instance.amountDebited,
-      'commission': instance.commission,
-      'fees': instance.fees,
-      'selected_payment_method': instance.selectedPaymentMethod,
     };
 
 Method _$MethodFromJson(Map<String, dynamic> json) => Method(

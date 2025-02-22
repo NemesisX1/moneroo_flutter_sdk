@@ -5,7 +5,7 @@ import 'package:moneroo_flutter_sdk/moneroo_flutter_sdk.dart';
 
 void main() {
   final api = MonerooApi(
-    apiKey: 'YOUR_API_KEY',
+    apiKey: 'pvk_za37ys|01JMPE1VE9WCY3J0ZFNFX47C2T',
   );
 
   group('MonerooApi', () {
@@ -19,6 +19,10 @@ void main() {
           firstName: 'Elikem',
           lastName: 'Medehou',
         ),
+        metadata: {
+          'key': 'order_id',
+          'value': '1234567890',
+        },
       );
 
       paymentId = payment.id;
