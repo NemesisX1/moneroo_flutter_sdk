@@ -10,7 +10,7 @@ platforms:
 
 environment:
   sdk: "^3.3.0"
-  flutter: 3.24.3
+  flutter: ">=3.0.0"
 
 dependencies:
   dio: ^5.4.1
