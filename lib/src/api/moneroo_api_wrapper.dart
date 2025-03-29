@@ -49,6 +49,13 @@ class MonerooApi {
     /// For custom methods
     List<MonerooMethod>? methods,
   }) async {
+    if (amount < 0) {
+      throw MonerooException(
+        code: -1,
+        message: 'Amount must be a positive integer',
+      );
+    }
+
     try {
       final res = await _dio.post<Map<String, dynamic>>(
         '/${apiVersion.name}${Endpoints.payments}${Endpoints.init}',
