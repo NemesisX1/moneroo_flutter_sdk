@@ -1,10 +1,10 @@
-name: Dart Tests
+name: Run Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   test:
@@ -13,24 +13,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Dart SDK
-      uses: dart-lang/setup-dart@v1
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
       with:
-        dart-version: stable
+        flutter-version: 'stable'
 
     - name: Install dependencies
-      run: dart pub get
+      run: flutter pub get
 
     - name: Run tests
-      run: dart test --coverage
+      run: flutter test
 
-    - name: Generate coverage report
-      run: genhtml coverage/lcov.info -o coverage/html
+    - name: Analyze code
+      run: flutter analyze
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage/lcov.info
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: true
+    - name: Format code
+      run: flutter format --set-exit-if-changed .
