@@ -163,7 +163,7 @@ class _MonerooState extends State<Moneroo> {
                 builder: (context) {
                   _controller
                     ..setUserAgent(
-                      'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.50 Mobile Safari/537.36',
+                      'Moneroo Flutter SDK',
                     )
                     ..loadRequest(Uri.parse(_checkoutUrl!))
                     ..setNavigationDelegate(

@@ -1,30 +1,13 @@
 # Changelog
 
-## [0.3.1] - 2025-02-22
-
-### Chores
-
-- Update README.md
-
-## [0.2.4] - 2025-02-22
+## [0.3.2] - 2025-02-22
 
 ### Added
 
 - Fetch available methods on Moneroo
 - Metadata submission when initiate payment
 - Add custom methods support when initiate methods
-
-## [0.2.3] - 2024-04-21
-
-### Chores
-
-- Update README.md
-
-## [0.2.1] - 2024-04-20
-
-### Chores
-
-- Update README.md
+- Update webview mobile agent
 
 ## [0.2.0] - 2024-04-01
 
