@@ -1,12 +1,12 @@
 name: moneroo_flutter_sdk
 description: Moneroo SDK for Flutter. Integrate easily many payments solutions from Africa to the World.
-version: 0.3.2
+version: 0.3.4
 homepage: https://docs.moneroo.io
-repository: https://github.com/NemesisX1/moneroo_flutter_sdk
+repository: https://github.com/MonerooHQ/moneroo_flutter
+issue_tracker: https://github.com/MonerooHQ/moneroo_flutter/issues
 platforms:
   android:
   ios:
-  web:
 
 environment:
   sdk: "^3.3.0"

@@ -23,16 +23,50 @@
 
 </div>
 
+## Overview
+
+Moneroo Flutter SDK provides a simple and reliable way to integrate payment processing into your Flutter applications, with support for various payment methods across multiple African countries. The SDK offers both a ready-to-use payment widget and a flexible API wrapper for custom implementations.
+
+### Features
+
+- 🌍 **Multi-currency support** - Process payments in XOF, XAF, NGN, GHS, and many other African currencies
+- 🔌 **Multiple payment methods** - Support for mobile money, bank transfers, cards, and more
+- 🛡️ **Secure transactions** - PCI-compliant payment processing
+- 📱 **Ready-to-use UI** - Pre-built payment widget for quick integration
+- 🔧 **Flexible API** - Direct API access for custom implementations
+- 🧪 **Sandbox mode** - Test your integration without real transactions
+
 ## Requirements
 
 **❗ In order to start using Moneroo Flutter you must have the [Flutter SDK][flutter_install_link] installed on your machine.**
 
+- Flutter SDK 2.5.0 or higher
+- Dart 2.14.0 or higher
+- A Moneroo account and API key (get yours at [moneroo.io](https://moneroo.io))
+
 ## Installation
+
+### Via Flutter CLI
 
 Install via `flutter pub add`:
 
 ```sh
 flutter pub add moneroo_flutter_sdk
+```
+
+### Via pubspec.yaml
+
+Alternatively, add the dependency to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  moneroo_flutter_sdk: ^0.3.4  # Use the latest version
+```
+
+Then run:
+
+```sh
+flutter pub get
 ```
 
 ---
@@ -73,7 +107,16 @@ Add this line in your `Info.plist`. This will help you to avoid an ERR_CLEAR_TEX
 
 ## Documentation
 
-You can a have a full example [here](example/lib/main.dart). You can also your the `MonerooApi` class to implement the payment yourself without using the Moneroo widget provided by this package.
+This README provides basic usage information. For more detailed documentation:
+
+- **Example App**: Check out the complete example [here](example/lib/main.dart)
+- **API Reference**: Comprehensive API documentation is available in the code
+- **Official Docs**: Visit [docs.moneroo.io](https://docs.moneroo.io/) for the official Moneroo documentation
+
+The SDK offers two main ways to integrate payments:
+
+1. **Using the Moneroo Widget** - A pre-built UI component that handles the entire payment flow
+2. **Using the MonerooApi class** - Direct API access for custom implementations
 
 ## Example Usage
 
@@ -170,22 +213,216 @@ class MyHomePage extends StatelessWidget {
 - `onPaymentCompleted`: Callback for payment completion
 - `onError`: Callback for error handling
 
+## Using the API Wrapper Directly
+
+While the Moneroo widget provides a complete payment flow with UI, you can also use the `MonerooApi` class directly for more customized payment processing. This is useful when you want to implement your own UI or integrate Moneroo payments into an existing flow.
+
+### Initializing the API
+
+```dart
+final api = MonerooApi(
+  apiKey: 'YOUR_API_KEY',
+  sandbox: false, // Set to true for testing
+);
+```
+
+### Creating a Payment
+
+```dart
+final payment = await api.initPayment(
+  amount: 5000, // Amount in smallest currency unit (e.g., cents)
+  customer: MonerooCustomer(
+    email: 'customer@example.com',
+    firstName: 'John',
+    lastName: 'Doe',
+    phone: '+1234567890', // Optional
+    country: 'US', // Optional
+  ),
+  currency: MonerooCurrency.XOF,
+  description: 'Premium subscription',
+  callbackUrl: 'https://your-app.com/payment-callback', // Optional
+  metadata: { 'orderId': '12345' }, // Optional
+);
+
+// The checkout URL can be used in a WebView or browser
+final checkoutUrl = payment.checkoutUrl;
+// Store the payment ID for later verification
+final paymentId = payment.id;
+```
+
+### Checking Payment Status
+
+```dart
+final paymentInfo = await api.getMonerooPaymentInfos(
+  paymentId: 'payment_123456789',
+);
+
+switch (paymentInfo.status) {
+  case MonerooStatus.success:
+    print('Payment was successful!');
+    // Handle successful payment
+    break;
+  case MonerooStatus.pending:
+    print('Payment is still being processed...');
+    // Maybe show a waiting screen
+    break;
+  case MonerooStatus.failed:
+    print('Payment failed.');
+    // Handle failed payment
+    break;
+  case MonerooStatus.cancelled:
+    print('Payment was cancelled.');
+    // Handle cancelled payment
+    break;
+  case MonerooStatus.initiated:
+    print('Payment has been initiated but not yet processed.');
+    // Maybe redirect to payment page
+    break;
+}
+```
+
+### Getting Available Payment Methods
+
+```dart
+final methods = await api.getMonerooPaymentMethods();
+
+// Display available payment methods to the user
+for (final method in methods) {
+  print('${method.name}: ${method.description}');
+}
+```
+
+### Error Handling
+
+```dart
+try {
+  final payment = await api.initPayment(
+    amount: 5000,
+    customer: customer,
+    currency: MonerooCurrency.XOF,
+    description: 'Premium subscription',
+  );
+  // Process payment
+} on MonerooException catch (e) {
+  // Handle Moneroo API errors
+  print('Error code: ${e.code}');
+  print('Error message: ${e.message}');
+  if (e.errors != null) {
+    print('Detailed errors: ${e.errors}');
+  }
+} on ServiceUnavailableException {
+  // Handle service unavailable errors (e.g., network issues)
+  print('Service is currently unavailable. Please try again later.');
+} catch (e) {
+  // Handle other errors
+  print('An unexpected error occurred: $e');
+}
+```
+
 ## Development
 
-### DEV Mode
+## Development Mode
 
-## Notes
+### Sandbox Testing
 
-### Exception Handling 🐛
+Moneroo provides a sandbox environment for testing your integration without making real transactions. To use the sandbox mode:
 
-- **MonerooException**: This exception is throw when an error occured in during the API calling. You can have more infos about the related error logging the class's attribute.
-- **ServiceUnavailableException**: This exception is throw when the SDK was'nt able to send your request to the server. Maybe due to network issues.
+```dart
+// When using the widget
+Moneroo(
+  apiKey: 'YOUR_API_KEY',
+  sandbox: true,  // Enable sandbox mode
+  // other parameters...
+);
+
+// When using the API directly
+final api = MonerooApi(
+  apiKey: 'YOUR_API_KEY',
+  sandbox: true,  // Enable sandbox mode
+);
+```
+
+In sandbox mode, you can use test cards and payment methods to simulate different payment scenarios. For more information on testing, visit the [Moneroo Testing Documentation](https://docs.moneroo.io/payments/testing).
+
+## Handling Errors
+
+### Exception Types 🐛
+
+The SDK throws the following exceptions that you should handle in your code:
+
+- **MonerooException**: Thrown when an error occurs during API communication. Contains:
+  - `code`: HTTP status code or custom error code
+  - `message`: Human-readable error message
+  - `errors`: Detailed error information (if available)
+
+- **ServiceUnavailableException**: Thrown when the SDK cannot reach the Moneroo servers, typically due to network issues.
+
+### Best Practices for Error Handling
+
+```dart
+try {
+  // Moneroo API call
+} on MonerooException catch (e) {
+  // Log the error details
+  print('Moneroo Error: ${e.message} (Code: ${e.code})');
+  
+  // Show appropriate message to the user
+  if (e.code == 401) {
+    // Authentication error
+  } else if (e.code == 400) {
+    // Invalid request
+  }
+} on ServiceUnavailableException {
+  // Handle connectivity issues
+  print('Cannot connect to Moneroo. Please check your internet connection.');
+} catch (e) {
+  // Handle other unexpected errors
+  print('Unexpected error: $e');
+}
+```
+
+## Frequently Asked Questions
+
+### Is the SDK compatible with Flutter Web?
+
+Currently, the SDK is optimized for mobile platforms (Android and iOS). Flutter Web support is planned for future releases.
+
+### How do I handle payment webhooks?
+
+Moneroo can send webhook notifications to your server when payment status changes. Configure your webhook URL in the Moneroo dashboard and implement an endpoint on your server to process these notifications.
+
+### Can I customize the payment UI?
+
+If you need a custom UI, use the `MonerooApi` class directly instead of the pre-built widget. This gives you full control over the payment flow and UI.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to the Moneroo Flutter SDK:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## Security Vulnerabilities
 
-
 If you discover a security vulnerability within Moneroo Flutter SDK, please send an e-mail to Moneroo Security via [hello@moneroo.io](mailto:security@moneroo.io). All security vulnerabilities will be promptly addressed.
+
+## Support
+
+For support, questions, or feedback:
+
+- 📧 Email: [support@moneroo.io](mailto:support@moneroo.io)
+- 📝 Issues: [GitHub Issues](https://github.com/MonerooHQ/moneroo_flutter/issues)
+- 📚 Documentation: [docs.moneroo.io](https://docs.moneroo.io)
 
 ## License
 
 The Moneroo Flutter SDK is open-sourced software licensed under the [MIT license](LICENSE.md).
+
+---
+
+<div align="center">
+Powered by <a href="https://moneroo.io">Moneroo</a> - The Payment Stack for Africa
+</div>

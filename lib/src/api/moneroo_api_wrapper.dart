@@ -9,21 +9,41 @@ import 'package:moneroo_flutter_sdk/src/models/methods.dart';
 import 'package:moneroo_flutter_sdk/src/models/payment.dart';
 import 'package:moneroo_flutter_sdk/src/models/payment_infos.dart';
 
-/// An API wrapper for the Moneroo API
+/// An API wrapper for the Moneroo payment processing API.
+///
+/// This class provides methods to interact with Moneroo's payment services,
+/// including initializing payments, retrieving payment information, and
+/// fetching available payment methods.
+///
+/// Usage:
+/// ```dart
+/// final api = MonerooApi(
+///   apiKey: 'your_api_key',
+///   sandbox: false, // Set to true for testing
+/// );
+/// ```
 class MonerooApi {
+  /// Creates a new instance of the Moneroo API wrapper.
   ///
+  /// [apiKey] is your Moneroo API key required for authentication.
+  /// [sandbox] determines whether to use the sandbox (testing) environment.
   MonerooApi({
     required this.apiKey,
     this.sandbox = false,
   });
 
-  /// Your app's API key
+  /// Your Moneroo API key used for authentication with the Moneroo API.
   final String apiKey;
 
+  /// Whether to use the sandbox (testing) environment.
   ///
+  /// Set to `true` for development and testing, and `false` for production.
+  /// More about it here: https://docs.moneroo.io/payments/testing#using-the-sandbox-environment
   final bool sandbox;
 
+  /// The API version to use for requests.
   ///
+  /// Currently only supports `MonerooVersion.v1`.
   final apiVersion = MonerooVersion.v1;
 
   late final _dio = Dio(
@@ -35,9 +55,38 @@ class MonerooApi {
     ),
   );
 
-  /// Initialize a payment on Moneroo. The main goal of this function is to
-  /// give you the checkout URL that will be used as a payment URL. The payment
-  /// URL is responsible of the payment interface.
+  /// Initializes a payment on Moneroo.
+  ///
+  /// This method creates a new payment transaction and returns a [MonerooPayment]
+  /// object containing the checkout URL and payment ID. The checkout URL can be
+  /// used to redirect users to the Moneroo payment interface.
+  ///
+  /// Parameters:
+  /// - [amount]: The payment amount in the smallest currency unit (e.g., cents)
+  /// - [customer]: Customer information (name, email, etc.)
+  /// - [currency]: The currency for the payment (default: XOF)
+  /// - [description]: A description of what the payment is for
+  /// - [callbackUrl]: URL where the user will be redirected after payment
+  /// - [metadata]: Additional data to store with the payment
+  /// - [methods]: Specific payment methods to enable for this transaction
+  ///
+  /// Throws [MonerooException] if the request fails or if amount is negative.
+  ///
+  /// Example:
+  /// ```dart
+  /// final payment = await api.initPayment(
+  ///   amount: 5000,
+  ///   customer: MonerooCustomer(
+  ///     email: 'customer@example.com',
+  ///     firstName: 'John',
+  ///     lastName: 'Doe',
+  ///   ),
+  ///   description: 'Premium subscription',
+  /// );
+  ///
+  /// // Use the checkout URL
+  /// final checkoutUrl = payment.checkoutUrl;
+  /// ```
   Future<MonerooPayment> initPayment({
     required int amount,
     required MonerooCustomer customer,
@@ -89,8 +138,30 @@ class MonerooApi {
     }
   }
 
-  /// Allow you to retrieve data about a payment given its paymentID. Can be
-  /// helpful to get the current status of a payment.
+  /// Retrieves detailed information about a payment by its ID.
+  ///
+  /// This method fetches the current state of a payment, including its status
+  /// (initiated, pending, success, failed, or cancelled), amount, currency,
+  /// and other relevant details.
+  ///
+  /// Parameters:
+  /// - [paymentId]: The unique identifier of the payment to retrieve
+  ///
+  /// Returns a [MonerooPaymentInfos] object containing payment details.
+  ///
+  /// Throws [MonerooException] if the request fails or the payment is not found.
+  /// Throws [ServiceUnavailableException] if the Moneroo service is unavailable.
+  ///
+  /// Example:
+  /// ```dart
+  /// final paymentInfo = await api.getMonerooPaymentInfos(
+  ///   paymentId: 'payment_123456789',
+  /// );
+  ///
+  /// if (paymentInfo.status == MonerooStatus.success) {
+  ///   // Payment was successful
+  /// }
+  /// ```
   Future<MonerooPaymentInfos> getMonerooPaymentInfos({
     required String paymentId,
   }) async {
@@ -118,7 +189,26 @@ class MonerooApi {
     }
   }
 
-  /// Retrive all the available methods on Moneroo
+  /// Retrieves all available payment methods supported by Moneroo.
+  ///
+  /// This method returns a list of payment methods that can be used with
+  /// Moneroo, including their names, descriptions, and other properties.
+  ///
+  /// Returns a list of [MonerooRemoteMethod] objects representing available
+  /// payment methods.
+  ///
+  /// Throws [MonerooException] if the request fails.
+  /// Throws [ServiceUnavailableException] if the Moneroo service is unavailable.
+  ///
+  /// Example:
+  /// ```dart
+  /// final methods = await api.getMonerooPaymentMethods();
+  ///
+  /// // Display available payment methods to the user
+  /// for (final method in methods) {
+  ///   print('${method.name}: ${method.description}');
+  /// }
+  /// ```
   Future<List<MonerooRemoteMethod>> getMonerooPaymentMethods() async {
     final methods = <MonerooRemoteMethod>[];
 

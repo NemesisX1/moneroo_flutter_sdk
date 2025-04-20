@@ -1,11 +1,34 @@
-// ignore_for_file: public_member_api_docs, constant_identifier_names
+// ignore_for_file: constant_identifier_names, public_member_api_docs
 
-/// Help to give an API version for the API
+/// Defines the API version to use when making requests to the Moneroo API.
+///
+/// Currently, only v1 is supported. This enum is used internally by the SDK
+/// to ensure compatibility with the Moneroo API.
+///
+/// Example:
+/// ```dart
+/// final apiVersion = MonerooVersion.v1;
+/// ```
 enum MonerooVersion {
+  /// Version 1 of the Moneroo API
   v1,
 }
 
-/// Allowed currency on Moneroo
+/// Defines the currencies supported by the Moneroo payment platform.
+///
+/// Each currency supports different payment methods. The comments next to each
+/// currency indicate some of the payment methods available for that currency.
+///
+/// When initializing a payment, you must specify one of these currencies.
+///
+/// Example:
+/// ```dart
+/// final payment = await api.initPayment(
+///   amount: 5000,
+///   customer: customer,
+///   currency: MonerooCurrency.XOF, // West African CFA Franc
+/// );
+/// ```
 enum MonerooCurrency {
   CDF, // Airtel Congo (airtel_cd)
 
@@ -66,6 +89,24 @@ enum MonerooCurrency {
   RWF, //Airtel Rwanda (airtel_rw), MTN MoMo Rwanda (mtn_rw)
 }
 
+/// Defines the specific payment methods supported by Moneroo.
+///
+/// These methods can be specified when initializing a payment to limit
+/// the payment options available to the customer. If no methods are specified,
+/// all methods supported for the selected currency will be available.
+///
+/// The method names correspond to specific payment providers and services
+/// across different African countries.
+///
+/// Example:
+/// ```dart
+/// final payment = await api.initPayment(
+///   amount: 5000,
+///   customer: customer,
+///   currency: MonerooCurrency.XOF,
+///   methods: [MonerooMethod.orange_ci, MonerooMethod.mtn_ci],
+/// );
+/// ```
 enum MonerooMethod {
   djamo_ci,
   djamo_sandbox_ci,
@@ -104,11 +145,49 @@ enum MonerooMethod {
   wave_sn
 }
 
-/// Give the current status of a payment
+/// Defines the possible statuses of a payment transaction.
+///
+/// These statuses represent the different states a payment can be in
+/// throughout its lifecycle. When checking payment information, you can
+/// use this status to determine the current state of the payment.
+///
+/// Example:
+/// ```dart
+/// final paymentInfo = await api.getMonerooPaymentInfos(
+///   paymentId: 'payment_123456789',
+/// );
+///
+/// switch (paymentInfo.status) {
+///   case MonerooStatus.success:
+///     print('Payment was successful!');
+///     break;
+///   case MonerooStatus.pending:
+///     print('Payment is still being processed...');
+///     break;
+///   case MonerooStatus.failed:
+///     print('Payment failed. Please try again.');
+///     break;
+///   case MonerooStatus.cancelled:
+///     print('Payment was cancelled by the user.');
+///     break;
+///   case MonerooStatus.initiated:
+///     print('Payment has been initiated but not yet processed.');
+///     break;
+/// }
+/// ```
 enum MonerooStatus {
+  /// Payment has been initialized but not yet processed
   initiated,
+
+  /// Payment is currently being processed
   pending,
+
+  /// Payment was cancelled by the user or merchant
   cancelled,
+
+  /// Payment processing failed
   failed,
+
+  /// Payment was successfully processed
   success,
 }

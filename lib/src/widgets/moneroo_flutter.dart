@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:moneroo_flutter_sdk/src/api/moneroo_api_wrapper.dart';
@@ -9,12 +11,45 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
-/// This widget is responsible of performing the full payment part
-/// on Moneroo. Fistly, based on the given data, it will retrieve
-/// a payment link.This link will be used to display a webview where
-/// the user will perform its payments.
+/// A Flutter widget that provides a complete payment flow using Moneroo services.
+///
+/// This widget handles the entire payment process, including:
+/// 1. Initializing a payment transaction with Moneroo
+/// 2. Displaying a WebView with Moneroo's payment interface
+/// 3. Monitoring the payment status
+/// 4. Providing callbacks for payment completion or errors
+///
+/// The widget automatically manages the payment flow and redirects the user
+/// back to your app when the payment is completed (whether successful or not).
+///
+/// Usage example:
+/// ```dart
+/// Moneroo(
+///   apiKey: 'your_api_key',
+///   amount: 5000,
+///   currency: MonerooCurrency.XOF,
+///   customer: MonerooCustomer(
+///     email: 'customer@example.com',
+///     firstName: 'John',
+///     lastName: 'Doe',
+///   ),
+///   description: 'Premium subscription',
+///   onPaymentCompleted: (infos, context) {
+///     if (infos.status == MonerooStatus.success) {
+///       // Handle successful payment
+///     } else {
+///       // Handle failed or cancelled payment
+///     }
+///   },
+///   onError: (error, context) {
+///     // Handle error
+///   },
+/// )
+/// ```
 class Moneroo extends StatefulWidget {
+  /// Creates a Moneroo payment widget.
   ///
+  /// Most parameters are required to initialize the payment process.
   const Moneroo({
     required this.amount,
     required this.apiKey,
@@ -31,44 +66,96 @@ class Moneroo extends StatefulWidget {
     this.methods,
   });
 
-  /// The Moneroo API key
+  /// Your Moneroo API key used for authentication with the Moneroo API.
+  ///
+  /// This key is required to initialize payments and verify their status.
   final String apiKey;
 
-  /// Defined whether or not Moneroo is in sandbox mode. The Default value
-  /// is false
+  /// Determines whether to use the sandbox (testing) environment.
+  ///
+  /// Set to `true` for development and testing, and `false` for production.
+  /// The default value is `false`.
   final bool sandbox;
 
-  /// Allow debug display for log purpose
+  /// Enables debug logging for the payment process.
+  ///
+  /// When set to `true`, the widget will print detailed logs about WebView
+  /// navigation, page loading progress, and errors to the console.
+  /// Useful for troubleshooting but should be disabled in production.
   final bool displayDebugLog;
 
-  ///. The payment's amount
+  /// The payment amount in the smallest currency unit (e.g., cents).
+  ///
+  /// For example, to charge 50 USD, set this to 5000 (50 dollars in cents).
   final int amount;
 
-  ///. The payment's currency
+  /// The currency to use for the payment.
+  ///
+  /// Must be one of the supported currencies defined in [MonerooCurrency].
+  /// Different currencies support different payment methods.
   final MonerooCurrency currency;
 
-  ///. The payment's customer
+  /// Customer information for the payment.
+  ///
+  /// This must include at minimum the customer's email, first name, and last name.
+  /// Additional fields like phone, address, etc. can be provided if available.
   final MonerooCustomer customer;
 
-  ///. The payment's description
+  /// A description of what the payment is for.
+  ///
+  /// This will be displayed to the customer during the payment process and
+  /// included in payment records.
   final String description;
 
-  /// The payment's callback URL where the user will be redirected after the
-  /// payment. The basic one is https://example.com.
+  /// The URL where the user will be redirected after completing the payment process.
+  ///
+  /// This URL is used to detect when the payment flow is complete. The widget
+  /// monitors navigation to this URL to determine when to call [onPaymentCompleted].
+  ///
+  /// If not provided, defaults to 'https://example.com'.
   final String? callbackUrl;
 
-  /// Some metadata that you want to store about the payment on Moneroo
+  /// Additional data to store with the payment on Moneroo's servers.
+  ///
+  /// This can be any custom data you want to associate with the payment,
+  /// such as order IDs, product information, or user details.
+  /// The data will be returned when querying payment information.
   final Map<String, dynamic>? metadata;
 
-  /// You can specify the payment methods that will be use with the payment link
+  /// Specific payment methods to enable for this transaction.
+  ///
+  /// If provided, only these payment methods will be available to the customer.
+  /// If not provided, all payment methods supported for the selected currency
+  /// will be available.
+  ///
+  /// See [MonerooMethod] for available payment methods.
   final List<MonerooMethod>? methods;
 
-  /// A callback function that is called once the payment is processed wheiter
-  /// or not it succeed. You can have infos about that using the infos parameter
+  /// A callback function called when the payment process is completed.
+  ///
+  /// This is called regardless of whether the payment succeeded, failed, or was cancelled.
+  /// The [MonerooPaymentInfos] parameter contains details about the payment status
+  /// and other relevant information.
+  ///
+  /// You should check `infos.status` to determine the payment outcome:
+  /// - [MonerooStatus.success]: Payment was successful
+  /// - [MonerooStatus.failed]: Payment failed
+  /// - [MonerooStatus.cancelled]: Payment was cancelled by the user
+  /// - [MonerooStatus.pending]: Payment is still being processed
+  /// - [MonerooStatus.initiated]: Payment was just initiated
   final void Function(MonerooPaymentInfos infos, BuildContext context)
       onPaymentCompleted;
 
-  /// A callback function to handle errors that will occur
+  /// A callback function to handle errors that occur during the payment process.
+  ///
+  /// This is called when there's an error initializing the payment, loading the
+  /// payment interface, or processing the payment. The error parameter contains
+  /// details about what went wrong.
+  ///
+  /// Common errors include:
+  /// - [MonerooException]: API errors from Moneroo
+  /// - [WebResourceError]: Errors loading the payment interface
+  /// - [ServiceUnavailableException]: Moneroo service is unavailable
   final void Function(dynamic error, BuildContext context) onError;
 
   @override
