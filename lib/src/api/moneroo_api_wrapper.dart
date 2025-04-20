@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:moneroo_flutter_sdk/src/api/endpoints.dart';

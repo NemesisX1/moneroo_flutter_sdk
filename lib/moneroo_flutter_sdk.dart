@@ -12,6 +12,8 @@
 /// - Widget: Ready-to-use UI component for payment processing
 /// - Models: Data structures for customers, payments, and payment information
 /// - Enums: Predefined constants for currencies, payment methods, and statuses
+// ignore_for_file: lines_longer_than_80_chars
+
 library;
 
 export 'src/api/moneroo_api_wrapper.dart';
